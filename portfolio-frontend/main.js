@@ -5,11 +5,26 @@ function getTimeline(){
   const urlParams = new URLSearchParams(queryString);
   const user = urlParams.getAll('user');
   const count = urlParams.getAll('count');
-  const endpoint = 'http://localhost:8888/twitter/timeline?user='+user+'&count='+count;
+  const endpoint = 'http://localhost:8888/portfolio/v1/timeline?user='+user+'&count='+count;
+  let headers = new Headers();
+  headers.append('Accept', 'application/json');
+  let encoded = window.btoa('username:password');
+  let auth = 'Basic ' + encoded;
+  headers.append('Authorization', auth);
 
-  fetch(endpoint)
+  let request = new Request(endpoint, {
+    method: 'GET',
+    headers: headers,
+    credentials: 'same-origin'
+  });
+
+  fetch(request)
   .then((response)=>{
-    return response.json();
+    if(response.ok){
+      return response.json();
+    } else {
+      throw new Error('BAD HTTP stuff');
+    }
   })
   .then((post)=>{
     post.timeline.forEach(function(tweet) {
@@ -33,7 +48,7 @@ function getPortfolio(){
 
   const urlParams = new URLSearchParams(queryString);
   const user = urlParams.getAll('user');
-  const endpoint = 'http://localhost:8888/portfolio/information/'+user;
+  const endpoint = 'http://localhost:8888/portfolio/v1/information/'+user;
   console.log(endpoint);
 
   fetch(endpoint)

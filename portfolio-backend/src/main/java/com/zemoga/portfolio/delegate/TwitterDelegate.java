@@ -3,7 +3,6 @@ package com.zemoga.portfolio.delegate;
 import com.zemoga.portfolio.config.TwitterConfig;
 import com.zemoga.portfolio.model.Tweet;
 import com.zemoga.portfolio.model.response.TimelineResponse;
-import com.zemoga.portfolio.repository.PortfolioRepository;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Setter;

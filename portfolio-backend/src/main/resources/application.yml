@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: local
+    active: dev
   datasource:
     url: jdbc:mysql://zemoga-test-db.crhpedy9xxto.us​-​east-1.rds.amazonaws.com:3306/zemoga_test_db
     username: zemoga_test_db
@@ -8,12 +8,6 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
-
-twitter:
-  app-id: "QjAjb1h1rt3CGH4AZjKxy3mtO0"
-  app-secret: "5ObLdPn58SlWWOIOTMan1OFiIFwl86njkenXPELtcGGHR2qSr9"
-  access-token: "73032661-hs6UyaVURXuHXo6wQAwGW2BB7WzftvUoVIev9lIi5"
-  access-token-secret: "euVhfz47eX1hFyfhyXVv9fto7sUIPVHg9jRojecOgbaRP"
 
 server:
   port: 8888
@@ -28,3 +22,6 @@ server:
 
 info:
   owner: Eduard Reyes <reydward@gmail.com>
+
+
+

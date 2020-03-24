@@ -12,13 +12,15 @@ import org.easymock.EasyMock;
 import org.easymock.IExpectationSetters;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.junit.jupiter.api.Test;
+import org.junit.Ignore;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import twitter4j.Paging;
 import twitter4j.ResponseList;
@@ -27,14 +29,15 @@ import twitter4j.Twitter;
 import twitter4j.json.DataObjectFactory;
 
 @RunWith(SpringRunner.class)
+@ContextConfiguration(classes = {IntegrationTestConfiguration.class})
 @SpringBootTest(classes = {PortfolioApplication.class})
 @AutoConfigureMockMvc
 public class TwitterTests extends AbstractBaseTest{
 
-	@Value("classpath:twitter-timeline-response.json")
+	@Value("classpath:integration-test/back-side/twitter-timeline-response.json")
 	private InputStream twitterTimelineResponse;
 
-	@Value("classpath:portfolio-timeline-response.json")
+	@Value("classpath:integration-test/front-side/portfolio-timeline-response.json")
 	private InputStream portfolioTimelineResponse;
 
 	@MockBean
@@ -45,7 +48,7 @@ public class TwitterTests extends AbstractBaseTest{
 		twitter = buildMockTwitterService(asString(twitterTimelineResponse));
 		mockMvc
 			.perform(
-				get("/twitter/timeline")
+				get("/portfolio/v1/timeline")
 					.param("user", "daenerys")
 					.param("count", "2")
 					.accept(MediaType.APPLICATION_JSON))
@@ -78,9 +81,8 @@ public class TwitterTests extends AbstractBaseTest{
 	public static Twitter buildMockTwitterService(String twitterJSONResponse) throws Exception {
 		Twitter ret = EasyMock.createMock(Twitter.class);
 		IExpectationSetters<ResponseList<Status>> expectation = EasyMock.expect(ret.getUserTimeline(EasyMock.isA(String.class),
-			EasyMock.isA(Paging.class)));
-
-			expectation.andReturn(buildUserTimelineResponseList(twitterJSONResponse)).times(1);
+		EasyMock.isA(Paging.class)));
+		expectation.andReturn(buildUserTimelineResponseList(twitterJSONResponse)).times(1);
 		EasyMock.replay(ret);
 		return ret;
 	}

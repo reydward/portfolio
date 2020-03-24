@@ -4,3 +4,9 @@ logging:
     guru.springframework.controllers: DEBUG
     web: DEBUG
     co.com.adl.pb.bpop.apigateway.filter: DEBUG
+
+twitter:
+  app-id: "QjAjb1h1rt3CGH4AZjKxy3mtO"
+  app-secret: "5ObLdPn58SlWWOIOTMan1OFiIFwl86njkenXPELtcGGHR2qSr9"
+  access-token: "73032661-hs6UyaVURXuHXo6wQAwGW2BB7WzftvUoVIev9lIi5"
+  access-token-secret: "euVhfz47eX1hFyfhyXVv9fto7sUIPVHg9jRojecOgbaRP"
