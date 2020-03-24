@@ -49,11 +49,25 @@ function getPortfolio(){
   const urlParams = new URLSearchParams(queryString);
   const user = urlParams.getAll('user');
   const endpoint = 'http://localhost:8888/portfolio/v1/information/'+user;
-  console.log(endpoint);
+  let headers = new Headers();
+  headers.append('Accept', 'application/json');
+  let encoded = window.btoa('username:password');
+  let auth = 'Basic ' + encoded;
+  headers.append('Authorization', auth);
 
-  fetch(endpoint)
+  let request = new Request(endpoint, {
+    method: 'GET',
+    headers: headers,
+    credentials: 'same-origin'
+  });
+
+  fetch(request)
   .then((response)=>{
-    return response.json();
+    if(response.ok){
+      return response.json();
+    } else {
+      throw new Error('BAD HTTP stuff');
+    }
   })
   .then((post)=>{
     photoDiv.innerHTML+=`<img src="${post.imageUrl}"/>`
