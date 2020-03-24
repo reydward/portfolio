@@ -14,7 +14,7 @@ There are three endpoints, for detailed information please check the swagger fil
 * A web browser.
 
 ### Steps to build de app
-* Clone or download the repository. 
+* Clone or download the repository using the branch 'feature/first-approach'. 
 * Using the terminal, go to portfolio-0.0.1-SNAPSHOT.jar location, 
     * You can use the existing jar file in the root of the repository.
     * You can execute 'gradle clean build' to generate a new jar file, it will be located in 'portfolio-backend/build/libs/portfolio-0.0.1-SNAPSHOT.jar'
