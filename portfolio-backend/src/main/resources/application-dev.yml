@@ -1,0 +1,6 @@
+logging:
+  level:
+    org.springframework.web: DEBUG
+    guru.springframework.controllers: DEBUG
+    web: DEBUG
+    co.com.adl.pb.bpop.apigateway.filter: DEBUG
