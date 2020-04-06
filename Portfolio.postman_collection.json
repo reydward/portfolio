@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "ad5c0766-1a1b-4269-ab99-5c6adc1e78fa",
+		"name": "Portfolio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Zemoga - Get profie information",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "username",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/portfolio/v1/information/daenerys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"portfolio",
+						"v1",
+						"information",
+						"daenerys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Zemoga - Modify portfolio",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"333\",\n  \"description\": \"Java Developer\",\n  \"imageUrl\": \"https://pbs.twimg.com/profile_images/901947348699545601/hqRMHITj_400x400.jpg\",\n  \"twitterUserName\": \"reydward\",\n  \"title\": \"Eduard Reyes Herrera.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/portfolio/v1/information",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"portfolio",
+						"v1",
+						"information"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Zemoga - Get Timeline",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "username",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/portfolio/v1/timeline?user=daenerys&count=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"portfolio",
+						"v1",
+						"timeline"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "daenerys"
+						},
+						{
+							"key": "count",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Twitter - Get tweets - Eduard",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "consumerKey",
+							"value": "​QjAjb1h1rt3CGH4AZjKxy3mtO",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "euVhfz47eX1hFyfhyXVv9fto7sUIPVHg9jRojecOgbaRP",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "73032661-hs6UyaVURXuHXo6wQAwGW2BB7WzftvUoVIev9lIi5",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "​5ObLdPn58SlWWOIOTMan1OFiIFwl86njkenXPELtcGGHR2qSr9",
+							"type": "string"
+						},
+						{
+							"key": "nonce",
+							"value": "JKLMNOPQRSTUVWXYZ123456",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "timestamp",
+							"value": "1396104071",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "oauth_access_token",
+						"value": "73032661-hs6UyaVURXuHXo6wQAwGW2BB7WzftvUoVIev9lIi5",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "oauth_access_token_secret",
+						"value": "euVhfz47eX1hFyfhyXVv9fto7sUIPVHg9jRojecOgbaRP",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "consumer_key",
+						"value": "QjAjb1h1rt3CGH4AZjKxy3mtO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "consumer_secret",
+						"value": "5ObLdPn58SlWWOIOTMan1OFiIFwl86njkenXPELtcGGHR2qSr9",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=reydward&count=2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"1.1",
+						"statuses",
+						"user_timeline.json"
+					],
+					"query": [
+						{
+							"key": "screen_name",
+							"value": "reydward"
+						},
+						{
+							"key": "count",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Twitter - Get tweets - Zemoga",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "​tmJKqM4ORfQW6CH7wIVV8uKNpmSEmeFAP8lYwGb19uYjj",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "​1220032047516921859-otvXjhExyUTZ5GLxssc9h5ORqtPZja",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "​X2eBm0Y21kYEuR74W3Frqc2JVIizOj8Q1EVGatDsEVVEJo0ucu",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "​​KRy7l0v8wex3w8Sy5zThai3Ea",
+							"type": "string"
+						},
+						{
+							"key": "nonce",
+							"value": "JKLMNOPQRSTUVWXYZ123456",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "timestamp",
+							"value": "1396104071",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "oauth_access_token",
+						"type": "text",
+						"value": "1220032047516921859-otvXjhExyUTZ5GLxssc9h5ORqtPZja",
+						"disabled": true
+					},
+					{
+						"key": "oauth_access_token_secret",
+						"type": "text",
+						"value": "tmJKqM4ORfQW6CH7wIVV8uKNpmSEmeFAP8lYwGb19uYjj",
+						"disabled": true
+					},
+					{
+						"key": "consumer_key",
+						"type": "text",
+						"value": "​KRy7l0v8wex3w8Sy5zThai3Ea",
+						"disabled": true
+					},
+					{
+						"key": "consumer_secret",
+						"type": "text",
+						"value": "​X2eBm0Y21kYEuR74W3Frqc2JVIizOj8Q1EVGatDsEVVEJo0ucu",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"1.1",
+						"statuses",
+						"user_timeline.json"
+					],
+					"query": [
+						{
+							"key": "screen_name",
+							"value": "twitterapi"
+						},
+						{
+							"key": "count",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
